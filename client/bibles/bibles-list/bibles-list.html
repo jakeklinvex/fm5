@@ -1,0 +1,18 @@
+<div ng-app="myApp" >
+<body ng-controller="MainCtrl">
+<form>
+  <label>Wrapped Objects in Arrays</label>
+  <div ng-repeat="bible in bibles" ng-form="websiteForm">
+    <input type="text"  ng-model="bible.book">
+    <input type="text"  ng-model="bible.beginning.chapter">
+     <input type="text"  ng-model="bible.beginning.verse">
+     <input type="text"  ng-model="bible.ending.chapter">
+     <input type="text"  ng-model="bible.ending.verse">
+    <button ng-click="removeFrom(bibles, $index)">X</button>
+  </div>
+  <button ng-click="addTo(bibles,{book:'', beginning: {chapter: '', verse: ''}, ending:{chapter: '', verse: ''}})">Add</button>
+</form>
+<pre ng-bind="bibles | json"></pre>
+
+</body>
+</div>

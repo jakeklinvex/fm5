@@ -1,0 +1,97 @@
+
+
+  <main>
+    <div id="left-column">
+        <!--<div href="."><img src="img/ForgottenMoreLogo.png"/></div> -->
+      <!--<div id="type" class="facet"></div> -->
+        <div id="source" class="facet"></div>
+        <div id="topics" class="facet"></div>
+        <div id="authors" class="facet"></div>
+        <div id="churches" class="facet"></div>
+        <div id="cities" class="facet"></div>
+      <div id="persons" class="facet"></div>
+      <div id="bible" class="facet"></div>
+    </div>
+
+    <div id="middle-column">
+        <div class="col-xs-8">    
+            <div id="search-input"></div>
+            <div id="sort-by-wrapper"><span id="sort-by"></span></div>
+            <div id="stats"></div>
+            <div id="hits" ui-sref="snippetDetails({ snippetId: snippet._id })"></div>
+            <div id="pagination"></div>
+        </div>
+        
+        <div class="col-xs-4"> 
+            <!--<input class="answer-input" type="text" ng-model="snippetsList.newSnippet.chat"/>
+            <pre class="height"><p class = "wrap">{{snippetsList.newSnippet.chat}}</p></pre> -->
+            <div ui-view="answerTest"></div>
+    
+            
+        </div>
+    </div>
+
+      
+
+  </main>
+
+  <footer>
+
+  </footer>
+  <!-- /INTERFACE -->
+
+  <!-- TEMPLATES -->
+  <script type="text/html" id="hit-template">
+    <div class="hit">
+      <!--<div class="hit-image">
+        <img src="{{|image}}" alt="{{|name}}">
+      </div> -->
+      <div class="hit-content">
+          <div class="col-xs-8">
+
+              <h2 class="hit-name">{{displayTitles}}</h2>
+          <p class="hit-sub-title">{{#OrderTitle}}
+               ...{{h}}
+              {{/OrderTitle}}
+          </p>
+      
+              <p class="hit-sub-title">{{#headings}}
+              ...{{.}}
+                  {{/headings}}
+              </p>
+          <p class="hit-text">{{_snippetResult.text.value}}</p>
+
+          <div class="label label-default">{{#topics}}
+               <li class="topics">{{ . }}</li>
+              {{/topics}}
+              {{#persons}}
+               <li class="people">{{ . }}</li>
+              {{/persons}}
+              </div>
+          </div>
+          <div class="col-xs-3">
+              <p class="hit-author">{{authors}}</p>
+              <p class="hit-church">{{{churches}}}</p>
+              <p class="hit-church">{{{cities}}}</p>
+          </div>
+
+      </div>
+    </div>
+  </script>
+
+  <script type="text/html" id="no-results-template">
+    <div id="no-results-message">
+      <p>We didn't find any results for the search <em>"{{|query}}"</em>.</p>
+      <a href="." class='clear-all'>Clear search</a>
+    </div>
+  </script>
+  
+
+  <script type="text/javascript">
+    initSearch({
+      appId: 'K85U7IEY61',
+      apiKey: '2351e05386db8bfd0dde639c3592deaf',
+      indexName: 'content'
+    });
+  </script>
+ 

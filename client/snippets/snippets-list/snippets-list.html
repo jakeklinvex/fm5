@@ -1,0 +1,351 @@
+<div class = "col-xs-9">
+    
+    
+<form>
+    <div class = "col-xs-12">
+    <button ng-click="snippetsList.addSnippet()">Add Content!</button>
+    </div>
+    
+    <div class = "blocked">
+    <label>Display Title: </label>
+    <input id="search-input" class="input2" type="text" ng-model="snippetsList.newSnippet.displayTitles"/>
+    </div>
+    
+    <div class = "blocked">
+     <label>Headings: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.headings" ng-list/>
+    </div>
+    <div class = "blocked">
+    <label>Author(s): </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.authors" ng-list/>
+    </div>
+    <div class = "blocked">
+    <label>Church: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.churches"/>
+    </div>
+    <div class = "blocked">
+     <label>Denomination: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.denominations"/>
+    </div>
+    <div class = "blocked">
+    <label>City: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.cities"/>
+    </div>
+    <div class = "blocked">
+    <label for="type"> Select Type: </label><br>
+    <select class="input2" name="type" ng-model="snippetsList.newSnippet.types">
+        <option value="Answer">Answer</option>
+        <option value="Article/Blog">Article/Blog</option>
+        <option value="Book">Book</option>
+        <option value="Question">Question</option>
+        <option value="Quote">Quote</option>
+        <option value="Sermon">Sermon</option>
+        <option value="Study">Study</option>
+    </select>
+    </div>
+    <div class = "blocked">
+    <label for="datePublished">Pick a date:</label>
+   <input class="input2" type="date" id="datePublished" name="input" ng-model="snippetsList.newSnippet.datePublished"
+       placeholder="yyyy-MM-dd"/>
+    </div>
+    <label>Text: </label>
+    <textarea class="input3" ng-model="snippetsList.newSnippet.text"></textarea>
+    
+    <div class = "blocked">
+    <label>People: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.persons" ng-list/>
+    </div>
+    
+    <div class = "blocked">
+    <label>Topic: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.topics" ng-list/>
+    </div>
+    
+    
+    <!--    REFERENCES BEGINNING     -->
+   
+    <label>References: </label><br>
+    
+    <div class="references">
+    <label class = "subtitlered">Reference Title: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.ref[0].title"/>
+    <label class = "subtitle">Reference Author: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.ref[0].author"/>
+    <label class = "subtitle">Reference Type: </label>
+    <select class="input2" name="type" ng-model="snippetsList.newSnippet.ref[0].type">
+        <option value="Answer">Answer</option>
+        <option value="Article/Blog">Article/Blog</option>
+        <option value="Book">Book</option>
+        <option value="Question">Question</option>
+        <option value="Quote">Quote</option>
+        <option value="Sermon">Sermon</option>
+        <option value="Study">Study</option>
+    </select>
+    <label class = "subtitle">Reference Text: </label>
+    <textarea class="input3" ng-model="snippetsList.newSnippet.ref[0].text"></textarea>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Reference Title: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.ref[1].title"/>
+    <label class = "subtitle">Reference Author: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.ref[1].author"/>
+    <label class = "subtitle">Reference Type: </label>
+    <select class="input2" name="type" ng-model="snippetsList.newSnippet.ref[1].type">
+        <option value="Answer">Answer</option>
+        <option value="Article/Blog">Article/Blog</option>
+        <option value="Book">Book</option>
+        <option value="Question">Question</option>
+        <option value="Quote">Quote</option>
+        <option value="Sermon">Sermon</option>
+        <option value="Study">Study</option>
+    </select>
+    <label class = "subtitle">Reference Text: </label>
+    <textarea class="input3" ng-model="snippetsList.newSnippet.ref[1].text"></textarea>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Reference Title: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.ref[2].title"/>
+    <label class = "subtitle">Reference Author: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.ref[2].author"/>
+    <label class = "subtitle">Reference Type: </label>
+    <select class="input2" name="type" ng-model="snippetsList.newSnippet.ref[2].type">
+        <option value="Answer">Answer</option>
+        <option value="Article/Blog">Article/Blog</option>
+        <option value="Book">Book</option>
+        <option value="Question">Question</option>
+        <option value="Quote">Quote</option>
+        <option value="Sermon">Sermon</option>
+        <option value="Study">Study</option>
+    </select>
+    <label class = "subtitle">Reference Text: </label>
+    <textarea class="input3" ng-model="snippetsList.newSnippet.ref[2].text"></textarea>
+    </div>
+    
+    
+   <!--<div ng-repeat="bible in snippetsList.newSnippet.bibles" ng-model="websiteForm">
+    <input type="text"  ng-model="bible.book">
+    <input type="text"  ng-model="bible.beginning.chapter">
+     <input type="text"  ng-model="bible.beginning.verse">
+     <input type="text"  ng-model="bible.ending.chapter">
+     <input type="text"  ng-model="bible.ending.verse">
+    <button ng-click="removeFrom(snippetsList.newSnippet.bibles, $index)">X</button>
+  </div>
+  <button ng-click="addTo(snippetsList.newSnippet.bibles,{book:'', beginning: {chapter: '', verse: ''}, ending:{chapter: '', verse: ''}})" >Add</button>
+    <pre ng-bind=" snippetsList.newSnippet.bibles | json"></pre>
+
+
+   
+    <div ng-init="snippetsList.newSnippet.bibles = [{book:'', beginning: {chapter: '', verse: ''}, ending:{chapter: '', verse: ''}}]">
+    <div ng-repeat="snippetsList.newSnippet.bible in snippetsList.newSnippet.bibles">
+        <input type="text"  ng-model="snippetsList.newSnippet.bible.book">
+    <input type="text"  ng-model="snippetsList.newSnippet.bible.beginning.chapter">
+     <input type="text"  ng-model="snippetsList.newSnippet.bible.beginning.verse">
+     <input type="text"  ng-model="snippetsList.newSnippet.bible.ending.chapter">
+     <input type="text"  ng-model="snippetsList.newSnippet.bible.ending.verse"> 
+        </div>
+        <button ng-click="addTo(bibles,{book:'', beginning: {chapter: '', verse: ''}, ending:{chapter: '', verse: ''}})" >Add</button>
+    <pre ng-bind=" bibles | json"></pre>
+    
+    
+    </div>
+    -->
+    
+    <label>Bible References: </label><br>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[0].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[0].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[0].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[0].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[0].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[1].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[1].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[1].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[1].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[1].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[2].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[2].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[2].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[2].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[2].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[3].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[3].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[3].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[3].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[3].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[4].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[4].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[4].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[4].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[4].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[5].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[5].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[5].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[5].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[5].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[6].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[6].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[6].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[6].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[6].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[7].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[7].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[7].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[7].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[7].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[8].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[8].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[8].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[8].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[8].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[9].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[9].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[9].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[9].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[9].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[10].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[10].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[10].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[10].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[10].ending.verse"/>
+    </div>
+    
+    <div class="references">
+    <label class = "subtitlered">Book: </label>
+    <input class="input2" type="text" ng-model="snippetsList.newSnippet.bible[11].book"/>
+    <label class = "subtitle">Beg. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[11].beginning.chapter"/>
+    <label class = "subtitle">Beg. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[11].beginning.verse"/>
+    <label class = "subtitle">End. Ch. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[11].ending.chapter"/>
+    <label class = "subtitle">End. V. </label>
+    <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[11].ending.verse"/>
+    </div>
+        
+</form>
+    
+    
+    
+</div>   
+
+
+<div class = "col-xs-3">
+    <pre>
+    <h2 class = "wrap">{{snippetsList.newSnippet.displayTitles}}</h2><br> 
+    <h3 class = "wrap">{{snippetsList.newSnippet.headings}}</h3> <br>
+    <p class = "wrap">{{snippetsList.newSnippet.authors}}</p> <br>
+    <p class = "wrap">{{snippetsList.newSnippet.churches}}</p><br>
+    <p class = "wrap">{{snippetsList.newSnippet.denominations}}</p><br>
+    <p class = "wrap">{{snippetsList.newSnippet.cities}}</p><br>
+   <p class = "wrap"> {{snippetsList.newSnippet.types}}</p><br>
+    <p class = "wrap">{{snippetsList.newSnippet.datePublished}}</p><br>
+    {{snippetsList.newSnippet.text}}<br>
+    <p class = "wrap">{{snippetsList.newSnippet.persons}}</p><br>
+    <p class = "wrap">{{snippetsList.newSnippet.topics}}</p><br>
+    <p class = "wrap">{{snippetsList.newSnippet.bible}}</p><br>
+    <p class = "wrap">{{snippetsList.newSnippet.bibles}}</p><br>
+    <p class = "wrap">{{snippetsList.newSnippet.refs}}</p>
+    </pre>
+    </div>
+    
+    <div class = "col-xs-12">
+    Search: <input class="input2" ng-model="query">
+<ul>
+  <li ui-sref="snippetDetails({ snippetId: snippet._id })" ng-repeat="snippet in snippetsList.snippets | filter:query">
+   <h3> {{snippet.displayTitles}} </h3> 
+ <h5>{{ snippet.headings }}</h5>
+    <p>{{snippet.authors}}</p>
+      <p>{{snippet.churches}}</p>
+      <p>{{snippet.cities}}</p>
+      <button ng-click="snippetsList.removeSnippet(snippet)">Delete</button>
+  </li>
+</ul>
+</div>
