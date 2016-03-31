@@ -10,7 +10,7 @@ height:100vh;
 
 body{
     height:100vh;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 #cloud-container{
@@ -26,7 +26,37 @@ body{
 select {
     display: inline-block;
     width: 100%;
+    line-height: 200%;
+    border: 0px;
+    padding: 5%;
+    border-radius: 0;
+    font-size: 3vh;
+    background-color: #FE7B4E;
+    border-bottom: 3px solid #F4F4F4;
+    margin-bottom: 5px;
+    margin-left: 10%;
+    color: white;
+    overflow:hidden; 
+    white-space:pre; 
+    text-overflow:ellipsis;
+    -webkit-appearance: none;
+    
 }
+
+select:active {
+    border:none;
+    outline:none;
+}
+
+select:focus {
+    border:none;
+    outline:none;
+}
+
+.option {
+    color:white;
+}
+
 
 textarea {
     display: inline-block;
@@ -123,6 +153,15 @@ main {
 
 #left-column:hover {
     background-color: orangered; 
+}
+
+#snippet-column {
+ 
+    overflow:scroll;
+  width: 25%;
+    margin: 0;
+    background-color: white;
+   display: inline-block;
 }
 
 
@@ -349,6 +388,7 @@ header img {
 /* PAGINATION */
 #pagination {
   margin-top: 60px;
+    margin-bottom: 30px;
 }
 #pagination ul {
   font-size: 0;
@@ -380,7 +420,7 @@ header img {
 #pagination li.ais-pagination--item__active a {
   color: white;
   border-color: gainsboro;
-  background: firebrick;
+  background: orangered;
 }
 #pagination li.ais-pagination--item__active a:hover {
   cursor: default;
@@ -691,7 +731,7 @@ button {
 }
 button,
 select {
-  text-transform: none;
+  //text-transform: none;
 }
 button,
 html input[type="button"],
@@ -835,6 +875,16 @@ input[type="number"]::-webkit-outer-spin-button {
     display: inline-block;
 }
 
+.blockedFull{
+    width: 100%;
+    border: 2px solid #F4F4F4;
+    padding: 1%;
+    margin: 1%;
+    display: inline-block;
+    margin-right: 5%;
+}
+
+
 
 textarea {
     height: 10vh;
@@ -860,6 +910,7 @@ textarea {
   font-weight: 100;
   margin-left: 5%;
     margin-bottom: 0;
+    margin-top: 10px;
   padding: 10px 5% 6px 5%;
   border: none;
   border-bottom: 3px solid #F4F4F4;
@@ -928,6 +979,7 @@ textarea {
 .col-xs-9 {
     padding: 0;
     margin:0;
+    overflow: scroll;
 }
 
 .col-xs-3 {
@@ -943,11 +995,17 @@ border-left {
     border-left: 3px solid #F4F4F4;
 }
 
-::-webkit-scrollbar { 
-    display: none; 
-}
+
 
 .chat-spacing {
     padding: 0 5% 0 5%;
 }
 
+.scroll {
+    overflow-y: scroll;
+
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}

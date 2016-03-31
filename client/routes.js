@@ -32,6 +32,40 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
             }
         })
     
+        .state('snippets2', {
+            url: "/snippets2",
+            views: {
+                "container": {
+                    template: '<snippets2></snippets2>'
+                },
+            },
+            abstract: true
+        })
+        
+        
+        .state('snippets2.content', {
+            url: "",
+            views: {
+                "snippets2":{
+                template: '<snippets-list></snippets-list>'
+                },
+                
+            
+            }
+        })
+    
+        .state('snippets2.contentDetails', {
+            url: '/snippets/:snippetId',
+            views: {
+                "snippets2":{
+                
+                template: '<snippet-details></snippet-details>'
+                },
+                
+            
+            }
+        })
+    
       .state('snippets', {
         url: '/snippets',
         template: '<snippets-list></snippets-list>',

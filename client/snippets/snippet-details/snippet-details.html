@@ -1,7 +1,7 @@
 <form>
     <div class = "col-xs-12">
     <button ng-click="snippetDetails.save()">Save</button>
-    <button ui-sref="snippets">Back</button>
+    <button ui-sref="snippets2.content">Back</button>
     </div>
     
     <div class = "blocked">
@@ -46,9 +46,11 @@
    <input class="input2" type="date" id="datePublished" name="input" ng-model="snippetDetails.snippet.datePublished"
        placeholder="yyyy-MM-dd"/>
     </div>
+    <div class = "blockedFull">
     <label>Text: </label>
     <textarea class="input3" ng-model="snippetDetails.snippet.text"></textarea>
-    
+    </div>
+        
     <div class = "blocked">
     <label>People: </label>
     <input class="input2" type="text" ng-model="snippetDetails.snippet.persons" ng-list/>
