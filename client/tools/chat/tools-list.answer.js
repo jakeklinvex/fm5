@@ -1,7 +1,7 @@
 angular.module('forgottenMore').directive('answersList', function () {
     return {
       restrict: 'E',
-      templateUrl: 'client/tools/tools-list/answers-list.html',
+      templateUrl: 'client/tools/chat/answers-list.html',
       controllerAs: 'answersList',
       controller: function ($scope, $reactive) {
         $reactive(this).attach($scope);

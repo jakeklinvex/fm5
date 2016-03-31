@@ -2,6 +2,36 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
     $locationProvider.html5Mode(true);
 
     $stateProvider
+        .state('container', {
+            url: "",
+          
+        })
+    
+        .state('tools2', {
+            url: "/tools2",
+            views: {
+                "container": {
+                    template: '<tools></tools>'
+                },
+            },
+            abstract: true
+        })
+        
+        
+        .state('tools2.content', {
+            url: "",
+            views: {
+                "search":{
+                template: '<tools-list></tools-list>'
+                },
+                "chat":{
+                template: '<answers-list></answers-list>'
+                },
+                
+            
+            }
+        })
+    
       .state('snippets', {
         url: '/snippets',
         template: '<snippets-list></snippets-list>',
@@ -46,6 +76,6 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
     })
 
 
-    $urlRouterProvider.otherwise("/tools");
+    $urlRouterProvider.otherwise("/tools2");
   });
 

@@ -1,0 +1,16 @@
+<main>
+<div id="chat-column">
+<p> Why do bad things happen to good people?</p>
+<textarea class="chatInput" ng-model="answersList.newAnswer.text"></textarea>
+            <button class= "chatButton" ng-click="answersList.addAnswer()">Add Content!</button>
+
+
+            <ul class = "chat-spacing">
+                <li  ng-repeat="answer in answersList.answers | filter:query">
+                    <h4> {{answer.text}} </h4> 
+                    <!--<button ng-click="answersList.removeAnswer(answer)">Delete</button> -->
+                </li>
+            </ul> 
+    
+    </div>
+    </main>
