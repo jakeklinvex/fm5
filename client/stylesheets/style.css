@@ -79,6 +79,15 @@ main {
   width: 20%;
     margin: 0;
     background-color: #bdc3c7;
+    transition: background-color .3s ease-in;
+}
+
+#left-column:hover {
+    transition: background-color .2s ease-in; 
+}
+
+#left-column:hover {
+    background-color: orangered; 
 }
 
 #left-column img {
@@ -158,6 +167,7 @@ header img {
 }
 #search-input input:focus {
   border-color: #D89CA6;
+    
 }
 #search-input input::-webkit-input-placeholder, #search-input input:-moz-placeholder, #search-input input:-moz-placeholder, #search-input input:-ms-input-placeholder {
   font-weight: 100;

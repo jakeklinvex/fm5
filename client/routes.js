@@ -25,6 +25,10 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
         url: '/tools',
         template: '<tools-list></tools-list>'
       })
+    .state('tools.chat', {
+        url: '/chat',
+        template: '<answers-list></answers-list>'
+      })
     .state('toolsDetails', {
         url: '/tools/:snippetId',
         template: '<tool-details></tool-details>'
@@ -33,6 +37,13 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
         url: '/answers',
         template: '<answers-list></answers-list>'
       })
+    .state('home',{
+        views: {
+            'chat': {
+            templateUrl: 'chat-room.html'
+            }
+        }
+    })
 
 
     $urlRouterProvider.otherwise("/tools");
