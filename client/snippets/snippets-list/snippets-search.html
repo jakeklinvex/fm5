@@ -2,12 +2,14 @@
     Search: <input class="input2" ng-model="query">
 <ul>
   <li ui-sref="snippets2.contentDetails ({ snippetId: snippet._id })" ng-repeat="snippet in snippetsSearch.snippets | filter:query ">
-   <h3> {{snippet.displayTitles}} </h3> 
+   <div class="list-light">
+      <h3> {{snippet.displayTitles}} </h3> 
  <h5>{{ snippet.headings }}</h5>
     <p>{{snippet.authors}}</p>
       <p>{{snippet.churches}}</p>
       <p>{{snippet.cities}}</p>
-      <button ng-click="snippetsSearch.removeSnippet(snippet)">Delete</button>
+      <button class ="chatButton" ng-click="snippetsSearch.removeSnippet(snippet)">Delete</button>
+       </div>
   </li>
 </ul>
 </div>
