@@ -46,8 +46,11 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
         .state('snippets2.content', {
             url: "",
             views: {
-                "snippets2":{
+                "content":{
                 template: '<snippets-list></snippets-list>'
+                },
+                "contentSearch":{
+                template: '<snippets-search></snippets-search>'
                 },
                 
             

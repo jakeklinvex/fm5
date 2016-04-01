@@ -11,11 +11,11 @@
     
 <textarea class="chatInput" ng-model="answersList.newAnswer.text"></textarea>
             <button class= "chatButton" ng-click="answersList.addAnswer()">Add Content!</button>
-
+<br>
 
             <ul class = "chat-spacing">
                 <li  ng-repeat="answer in answersList.answers | filter:query">
-                    <h4> {{answer.text}} </h4> 
+                    <h4 color="lightgray"> {{answer.text}} </h4> 
                     <!--<button ng-click="answersList.removeAnswer(answer)">Delete</button> -->
                 </li>
             </ul> 

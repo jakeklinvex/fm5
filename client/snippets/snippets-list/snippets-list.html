@@ -1,11 +1,11 @@
-<div class = "col-xs-9">
+<div class = "col-xs-8">
     
     
 <form>
     <div class = "col-xs-12">
-    <button ng-click="snippetsList.addSnippet()">Add Content!</button>
-    </div>
+    <button class="contentButton" ng-click="snippetsList.addSnippet()">Add Content!</button>
     
+    <div class = "col-xs-12 center-content">
     <div class = "blocked">
     <label>Display Title: </label>
     <input id="search-input" class="input2" type="text" ng-model="snippetsList.newSnippet.displayTitles"/>
@@ -311,7 +311,8 @@
     <label class = "subtitle">End. V. </label>
     <input class="input4" type="number" ng-model="snippetsList.newSnippet.bible[11].ending.verse"/>
     </div>
-        
+    </div>
+</div> 
 </form>
     
     
@@ -319,12 +320,13 @@
 </div>   
 
 
-<div class = "col-xs-3">
+<div class = "col-xs-4 preview">
+    <h2 align="center" color ="lightgray">Preview</h2>
     <pre>
-    <h2 class = "wrap">{{snippetsList.newSnippet.displayTitles}}</h2><br> 
-    <h3 class = "wrap">{{snippetsList.newSnippet.headings}}</h3> <br>
-    <p class = "wrap">{{snippetsList.newSnippet.authors}}</p> <br>
-    <p class = "wrap">{{snippetsList.newSnippet.churches}}</p><br>
+    <h3 class = "wrap">{{snippetsList.newSnippet.displayTitles}}</h3>
+    <h4 class = "wrap">{{snippetsList.newSnippet.headings}}</h4> 
+    <p class = "wrap">{{snippetsList.newSnippet.authors}}</p> 
+    <p class = "wrap">{{snippetsList.newSnippet.churches}}</p>
     <p class = "wrap">{{snippetsList.newSnippet.denominations}}</p><br>
     <p class = "wrap">{{snippetsList.newSnippet.cities}}</p><br>
    <p class = "wrap"> {{snippetsList.newSnippet.types}}</p><br>
@@ -334,11 +336,11 @@
     <p class = "wrap">{{snippetsList.newSnippet.topics}}</p><br>
     <p class = "wrap">{{snippetsList.newSnippet.bible}}</p><br>
     <p class = "wrap">{{snippetsList.newSnippet.bibles}}</p><br>
-    <p class = "wrap">{{snippetsList.newSnippet.refs}}</p>
+    <p class = "wrap">{{snippetsList.newSnippet.ref}}</p>
     </pre>
-    </div>
+</div>
     
-    <div class = "col-xs-12">
+   <!-- <div class = "col-xs-12">
     Search: <input class="input2" ng-model="query">
 <ul>
   <li ui-sref="snippets2.contentDetails ({ snippetId: snippet._id })" ng-repeat="snippet in snippetsList.snippets | filter:query">
@@ -350,4 +352,4 @@
       <button ng-click="snippetsList.removeSnippet(snippet)">Delete</button>
   </li>
 </ul>
-</div>
+</div> -->
