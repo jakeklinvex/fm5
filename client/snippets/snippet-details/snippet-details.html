@@ -1,9 +1,14 @@
 <form>
-    <div class = "col-xs-12">
-    <button ng-click="snippetDetails.save()">Save</button>
-    <button ui-sref="snippets2.content">Back</button>
-    </div>
     
+   <div class = "col-xs-8">
+    
+    
+<form>
+    <div class = "col-xs-12">
+    <button class="contentButton" ng-click="snippetDetails.save()">Save</button>
+    <button class="contentButton" ui-sref="snippets2.content">Back</button>
+    
+    <div class = "col-xs-12 center-content">
     <div class = "blocked">
     <label>Display Title: </label>
     <input id="search-input" class="input2" type="text" ng-model="snippetDetails.snippet.displayTitles"/>
@@ -232,7 +237,7 @@
     <input class="input4" type="number" ng-model="snippetDetails.snippet.bible[5].ending.verse"/>
     </div>
     
-     <div class="references">
+    <div class="references">
     <label class = "subtitlered">Book: </label>
     <input class="input2" type="text" ng-model="snippetDetails.snippet.bible[6].book"/>
     <label class = "subtitle">Beg. Ch. </label>
@@ -309,7 +314,34 @@
     <label class = "subtitle">End. V. </label>
     <input class="input4" type="number" ng-model="snippetDetails.snippet.bible[11].ending.verse"/>
     </div>
+    </div>
+</div> 
+</form>
     
+    
+    
+</div>   
+
+
+<div class = "col-xs-4 preview">
+    <h2 align="center" color ="lightgray">Preview</h2>
+    <pre>
+    <h3 class = "wrap">{{snippetDetails.snippet.displayTitles}}</h3>
+    <h4 class = "wrap">{{snippetDetails.snippet.headings}}</h4> 
+    <p class = "wrap">{{snippetDetails.snippet.authors}}</p> 
+    <p class = "wrap">{{snippetDetails.snippet.churches}}</p>
+    <p class = "wrap">{{snippetDetails.snippet.denominations}}</p><br>
+    <p class = "wrap">{{snippetDetails.snippet.cities}}</p><br>
+   <p class = "wrap"> {{snippetDetails.snippet.types}}</p><br>
+    <p class = "wrap">{{snippetDetails.snippet.datePublished}}</p><br>
+    {{snippetDetails.snippet.text}}<br>
+    <p class = "wrap">{{snippetDetails.snippet.persons}}</p><br>
+    <p class = "wrap">{{snippetDetails.snippet.topics}}</p><br>
+    <p class = "wrap">{{snippetDetails.snippet.bible}}</p><br>
+    <p class = "wrap">{{snippetDetails.snippet.bibles}}</p><br>
+    <p class = "wrap">{{snippetDetails.snippet.ref}}</p>
+    </pre>
+</div>
 </form>
 
 <!--
