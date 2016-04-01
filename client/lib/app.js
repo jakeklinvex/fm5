@@ -1,2 +1,2 @@
-angular.module('forgottenMore', ['angular-meteor', 'ui.router']);
+angular.module('forgottenMore', ['angular-meteor', 'ui.router', 'ngAnimate']);
 
