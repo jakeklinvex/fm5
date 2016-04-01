@@ -7,6 +7,30 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
           
         })
     
+    // ********* Q&A VIEW ***************
+        .state('questions', {
+            url: "/questions",
+            views: {
+                "container": {
+                    template: '<questions></questions>'
+                },
+            },
+            abstract: true
+        })
+        
+        
+        .state('questions.content', {
+            url: "",
+            views: {
+                "search":{
+                template: '<tools-list></tools-list>'
+                },
+            }
+        })
+   
+    
+    
+    // ********* TOOLS VIEW ***************
         .state('tools2', {
             url: "/tools2",
             views: {
@@ -32,6 +56,7 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
             }
         })
     
+    // ********* CONTENT MANAGEMENT VIEW ***************
         .state('snippets2', {
             url: "/snippets2",
             views: {
@@ -71,9 +96,11 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
             }
         })
     
-      .state('snippets', {
+      /*.state('snippets', {
         url: '/snippets',
-        template: '<snippets-list></snippets-list>',
+        template: '<snippets-list></snippets-list>',*/
+    
+    
         /*controller: function($scope){
             $scope.bibles = [{book:'', beginning: {chapter: '', verse: ''}, ending:{chapter: '', verse: ''}}];
             
@@ -85,7 +112,8 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
     array.push(template);
   };
         }*/
-      })
+    
+   /*   })
       .state('snippetDetails', {
         url: '/snippets/:snippetId',
         template: '<snippet-details></snippet-details>'
@@ -112,7 +140,7 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
             templateUrl: 'chat-room.html'
             }
         }
-    })
+    }) */
 
 
     $urlRouterProvider.otherwise("/tools2");
