@@ -1131,6 +1131,26 @@ border-left {
     float:left;
 }
 
+#naming-chat ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+#naming-chat ul li
+{
+    list-style-type: none;
+    display: inline;
+}
+
+#naming-chat li:before {
+content: " | ";
+}
+
+#naming-chat li:first-child:before {
+content: none;
+    
+}
 
 ::-webkit-scrollbar { 
     display: none; 

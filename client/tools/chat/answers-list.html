@@ -16,8 +16,15 @@
             <ul class = "chat-spacing">
                 <li  ng-repeat="answer in answersList.answers | filter:query">
                    <!-- <p > {{answer.ownerEmail[0].address}} </p> -->
-                    <p > {{answer.ownerName[0].fullNames}} {{answer.ownerName[0].denominations}} </p>
-                    <h4 > {{answer.text}} </h4> 
+                   
+                    <div id="naming-chat">
+                    <ul>
+                        <li><a> {{answer.ownerName[0].fullNames}}</a></li>
+                        <li><a>{{answer.ownerName[0].denominations}} </a></li>
+                    </ul>
+                    </div>
+                    
+                    <h4 > {{answer.text}} </h4>
                     <!--<button ng-click="answersList.removeAnswer(answer)">Delete</button> -->
                 </li>
             </ul> 
