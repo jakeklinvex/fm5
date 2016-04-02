@@ -1,0 +1,28 @@
+<form>
+    <div class = "col-xs-12">
+    <button class="contentButton" ng-click="userDetails.save()">Save</button>
+    <button class="contentButton" ui-sref="user.content">Back</button>
+    
+    <div class = "col-xs-12 center-content">
+    <div class = "blocked">
+    <label>Display Title: </label>
+    <input id="search-input" class="input2" type="text" ng-model="userDetails.user.displayTitles"/>
+    </div>
+    
+    <div class = "blocked">
+     <label>Headings: </label>
+    <input class="input2" type="text" ng-model="userDetails.profile.fullNames" ng-list/>
+    </div>
+    <div class = "blocked">
+    <label>Author(s): </label>
+    <input class="input2" type="text" ng-model="userDetails.user.authors" ng-list/>
+    </div>
+    <div class = "blocked">
+    <label>Church: </label>
+    <input class="input2" type="text" ng-model="userDetails.user.churches"/>
+    </div>
+        </div>
+    </div>
+</form>
+    
+    

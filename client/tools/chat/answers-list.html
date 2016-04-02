@@ -20,11 +20,18 @@
                     <div id="naming-chat">
                     <ul>
                         <li><a> {{answer.ownerName[0].fullNames}}</a></li>
-                        <li><a>{{answer.ownerName[0].denominations}} </a></li>
+                        <li><a>{{answer.ownerName[0].titles}} </a></li>
+                        
                     </ul>
                     </div>
                     
                     <h4 > {{answer.text}} </h4>
+                    
+                    <ul>
+                        <li><a>{{answer.ownerName[0].churches}} </a></li>
+                        <li><a>{{answer.ownerName[0].denominations}} </a></li>
+                        <li><a>{{answer.ownerName[0].cities}} </a></li>
+                    </ul>
                     <!--<button ng-click="answersList.removeAnswer(answer)">Delete</button> -->
                 </li>
             </ul> 

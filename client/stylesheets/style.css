@@ -227,7 +227,7 @@ main {
     left:0;
     right:0;
     overflow:scroll;
-   border-left: 5px solid #F4F4F4;
+   border-left: 1px solid #F4F4F4;
     height: 100vh;
     float: right;
   width: 100%;
@@ -241,7 +241,7 @@ main {
 }
 
 #chat-column:hover {
-    border-left: 5px solid orangered; 
+    border-left: 1px solid orangered; 
 }
 
 #left-column img {
@@ -502,6 +502,9 @@ header img {
   padding-right: 14px;
   cursor: pointer;
   border: none;
+    padding:0px;
+    padding-right: 14px;
+    padding-bottom: 10%;
   outline: none;
   background: none;
   -webkit-appearance: none;
@@ -1141,15 +1144,26 @@ border-left {
 {
     list-style-type: none;
     display: inline;
+    color: #FFB59A;
+    
 }
 
 #naming-chat li:before {
-content: " | ";
+content: " |  ";
 }
 
 #naming-chat li:first-child:before {
 content: none;
     
+}
+
+a {
+    color:inherit;
+}
+
+a:hover {
+    color:inherit;
+    text-decoration: inherit;
 }
 
 ::-webkit-scrollbar { 

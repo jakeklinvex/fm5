@@ -56,6 +56,29 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
             }
         })
     
+    
+    // ********* USER PROFILE VIEW ***************
+        .state('user', {
+            url: "/user",
+            views: {
+                "container": {
+                    template: '<user></user>'
+                },
+            },
+            abstract: true
+        })
+        
+        
+        .state('user.userDetails', {
+            url: '/users/:userId',
+            views: {
+                "profileEdit":{
+                template: '<user-details></user-details>'
+                },
+                
+            },
+        
+        })
     // ********* CONTENT MANAGEMENT VIEW ***************
         .state('snippets2', {
             url: "/snippets2",
