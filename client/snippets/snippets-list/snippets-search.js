@@ -7,10 +7,13 @@ angular.module('forgottenMore').directive('snippetsSearch', function () {
         $reactive(this).attach($scope);
 
         this.newSnippet = {};
+          this.sort = {
+                displayTitles: 1
+                };
 
         this.helpers({
           snippets: () => {
-            return Snippets.find({});
+            return Snippets.find({}, { sort : this.getReactively('sort') });
           }
         });
           
@@ -25,6 +28,7 @@ angular.module('forgottenMore').directive('snippetsSearch', function () {
             }; */
 
         this.addSnippet = () => {
+            this.newSnippet.owner = Meteor.user()._id;
           Snippets.insert(this.newSnippet);
           this.newSnippet = {};
         };

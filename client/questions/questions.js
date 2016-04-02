@@ -25,6 +25,7 @@ angular.module('forgottenMore').directive('questions', function () {
             }; */
 
         this.addSnippet = () => {
+            this.newSnippet.owner = Meteor.user()._id;
           Snippets.insert(this.newSnippet);
           this.newSnippet = {};
         };
@@ -35,3 +36,4 @@ angular.module('forgottenMore').directive('questions', function () {
       }
     }
   });
+

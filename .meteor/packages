@@ -20,4 +20,8 @@ angularui:angular-ui-bootstrap
 twbs:bootstrap
 angularui:angular-ui-router
 formly:angular-formly
-insecure
+accounts-password
+dotansimha:accounts-ui-angular
+accounts-facebook
+accounts-twitter
+accounts-google

@@ -25,6 +25,7 @@ angular.module('forgottenMore').directive('tools', function () {
             }; */
 
         this.addSnippet = () => {
+            this.newSnippet.owner = Meteor.user()._id;
           Snippets.insert(this.newSnippet);
           this.newSnippet = {};
         };

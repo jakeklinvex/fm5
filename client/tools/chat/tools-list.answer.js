@@ -1,3 +1,5 @@
+Meteor.subscribe("userData");
+
 angular.module('forgottenMore').directive('answersList', function () {
     return {
       restrict: 'E',
@@ -15,6 +17,10 @@ angular.module('forgottenMore').directive('answersList', function () {
         });
 
         this.addAnswer = () => {
+            this.newAnswer.owner = Meteor.user()._id;
+            this.newAnswer.ownerEmail = Meteor.user().emails;
+            this.newAnswer.ownerName = Meteor.user().fullName;
+            this.newAnswer.ownerDenomination = Meteor.user().denominations;
           Answers.insert(this.newAnswer);
           this.newAnswer = {};
         };
@@ -25,3 +31,5 @@ angular.module('forgottenMore').directive('answersList', function () {
       }
     }
   });
+
+

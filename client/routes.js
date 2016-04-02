@@ -88,12 +88,21 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
                 "content":{
                 template: '<snippet-details></snippet-details>'
                 },
+                
                 "contentSearch":{
                 template: '<snippets-search></snippets-search>'
                 },
-                
-            
-            }
+            },
+            resolve: {
+                currentUser: ($q) => {
+                    if (Meteor.userId() == null) {
+                         return $q.reject('AUTH_REQUIRED');
+                    }
+                    else {
+                        return $q.resolve();
+                        }
+                    }
+                }
         })
     
       /*.state('snippets', {
@@ -144,5 +153,13 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
 
 
     $urlRouterProvider.otherwise("/tools2");
-  });
+  })
+    .run(function ($rootScope, $state) {
+    $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+      if (error === 'AUTH_REQUIRED') {
+        $state.go('snippets2.content');
+      }
+    });
+
+});
 
