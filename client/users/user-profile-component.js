@@ -6,11 +6,12 @@ angular.module('forgottenMore').directive('userDetails', function () {
       controller: function ($scope, $stateParams, $reactive) {
         $reactive(this).attach($scope);
  
-        this.helpers({
+       /* this.helpers({
           user: () => {
-            return Meteor.user()._id;
+            
+            return users.findOne({_id: $stateParams.userId});
           }
-        });
+        }); */
  
         /*this.save = () => {
           Users.update({_id: $stateParams.userId}, {
@@ -29,7 +30,7 @@ angular.module('forgottenMore').directive('userDetails', function () {
           });
         }; */
           
-          Meteor.users.update({_id:Meteor.user()._id}, { 
+          /*Meteor.users.update({_id:Meteor.user()._id}, { 
               $set: {
                   
                 profile: Meteor.user().profile,
@@ -37,7 +38,7 @@ angular.module('forgottenMore').directive('userDetails', function () {
                 churches: this.snippet.churches,
                 denominations: this.snippet.denominations,
                   
-              } });
+              } }); */
           
       }
     }

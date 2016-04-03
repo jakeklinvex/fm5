@@ -58,8 +58,8 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
     
     
     // ********* USER PROFILE VIEW ***************
-        .state('user', {
-            url: "/user",
+        .state('users', {
+            url: "/users",
             views: {
                 "container": {
                     template: '<user></user>'
@@ -69,15 +69,24 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
         })
         
         
-        .state('user.userDetails', {
+        .state('users.userDetails', {
             url: '/users/:userId',
             views: {
-                "profileEdit":{
+                "content":{
                 template: '<user-details></user-details>'
                 },
                 
             },
-        
+            resolve: {
+                currentUser: ($q) => {
+                    if (Meteor.userId() == null) {
+                         return $q.reject('AUTH_REQUIRED');
+                    }
+                    else {
+                        return $q.resolve();
+                        }
+                    }
+                }
         })
     // ********* CONTENT MANAGEMENT VIEW ***************
         .state('snippets2', {
