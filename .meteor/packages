@@ -19,9 +19,8 @@ angular
 angularui:angular-ui-bootstrap
 twbs:bootstrap
 angularui:angular-ui-router
-formly:angular-formly
+
+
+
+carlosbaraza:accounts-ui-bootstrap-3-angular
 accounts-password
-dotansimha:accounts-ui-angular
-accounts-facebook
-accounts-twitter
-accounts-google

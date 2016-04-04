@@ -17,21 +17,23 @@
                 <li  ng-repeat="answer in answersList.answers | filter:query">
                    <!-- <p > {{answer.ownerEmail[0].address}} </p> -->
                    
-                    <div id="naming-chat">
+                    <div id="chat-expert">
                     <ul>
-                        <li><a> {{answer.ownerName[0].fullNames}}</a></li>
-                        <li><a>{{answer.ownerName[0].titles}} </a></li>
-                        
+                        <li><a> {{answer.ownerName.fullName}}</a></li>
+                        <li><a style="font-size:80%">{{answer.ownerName.church}} </a></li>
+                    </ul>
+                    <div id="chat-cred" >
+                    <ul>
+                        <li><a>{{answer.ownerName.title}} </a></li>
+                        <li><a>{{answer.ownerName.denomination}} </a></li>
+                        <li><a>{{answer.ownerName.city}} </a></li>
                     </ul>
                     </div>
+                    </div>
                     
-                    <h4 > {{answer.text}} </h4>
+                    <div id="chat-text" > {{answer.text}} </div>
                     
-                    <ul>
-                        <li><a>{{answer.ownerName[0].churches}} </a></li>
-                        <li><a>{{answer.ownerName[0].denominations}} </a></li>
-                        <li><a>{{answer.ownerName[0].cities}} </a></li>
-                    </ul>
+                    
                     <!--<button ng-click="answersList.removeAnswer(answer)">Delete</button> -->
                 </li>
             </ul> 

@@ -17,8 +17,8 @@ angular.module('forgottenMore').directive('answersList', function () {
         });
 
         this.addAnswer = () => {
-            this.newAnswer.owner = Meteor.user()._id;
-            this.newAnswer.ownerEmail = Meteor.user().emails;
+           this.newAnswer.owner = Meteor.user()._id;
+            /*this.newAnswer.ownerEmail = Meteor.user().emails;*/
             this.newAnswer.ownerName = Meteor.user().profile;
             
           Answers.insert(this.newAnswer);
@@ -31,5 +31,4 @@ angular.module('forgottenMore').directive('answersList', function () {
       }
     }
   });
-
 
