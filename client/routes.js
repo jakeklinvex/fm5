@@ -23,7 +23,7 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
             url: "",
             views: {
                 "search":{
-                template: '<tools-list></tools-list>'
+                template: '<questions-list></questions-list>'
                 },
             }
         })

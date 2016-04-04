@@ -918,6 +918,30 @@ input[type="number"]::-webkit-outer-spin-button {
     border-color: #D89CA6;
 }
 
+.inputFooter {
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+  font-weight: 100;
+  margin-left: 0;
+    margin-bottom: 0px;
+  padding-left: 5%;
+    padding-right: 5%;
+  border: 5px solid #F4F4F4;
+  
+    
+}
+
+
+.inputFooter:focus {
+    transition: border-color .3s ease-in;
+  outline: 0;
+}
+
+.inputFooter:focus {
+    border-color: #D89CA6;
+}
+
 .references{
     width: 30%;
     display: inline-block;
@@ -1072,6 +1096,16 @@ textarea {
     margin:0;
 }
 
+.col-xs-6 {
+    padding: 0;
+    margin:0;
+}
+
+.col-xs-12 {
+    padding: 0;
+    margin:0;
+}
+
 input[type="checkbox"] {
     display:none;
 }
@@ -1122,17 +1156,24 @@ border-left {
     position: absolute;
     top:auto;
     left:auto;
-    bottom: 0;
     right: 0;
+    
 }
 
 #login-dropdown-list .dropdown-menu {
     min-width: 300px;
     padding: 15px;
     /* right: 50%; */
-    position: initial;
+    position: inherit;
     margin-bottom: 10%;
     /* right: 100px; */
+}
+
+.dropdown-menu {
+    position: absolute;
+    right:inherit;
+    left:inherit;
+    
 }
 
 .right {
@@ -1199,6 +1240,16 @@ content: " |  ";
 #chat-cred li:first-child:before {
 content: none;
     
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.padding2p {
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 a {
