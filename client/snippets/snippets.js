@@ -1,8 +1,8 @@
-angular.module('forgottenMore').directive('snippetsList', function () {
+angular.module('forgottenMore').directive('snippets2', function () {
     return {
       restrict: 'E',
-      templateUrl: 'client/snippets/snippets-list/snippets-list.html',
-      controllerAs: 'snippetsList',
+      templateUrl: 'client/snippets/snippets2.html',
+      controllerAs: 'snippets2',
       controller: function ($scope, $reactive) {
         $reactive(this).attach($scope);
 
@@ -38,5 +38,4 @@ angular.module('forgottenMore').directive('snippetsList', function () {
       }
     }
   });
-
 

@@ -1,16 +1,19 @@
-angular.module('forgottenMore').directive('snippetsList', function () {
+angular.module('forgottenMore').directive('snippetsSearch', function () {
     return {
       restrict: 'E',
-      templateUrl: 'client/snippets/snippets-list/snippets-list.html',
-      controllerAs: 'snippetsList',
+      templateUrl: 'client/snippets/snippets-list/snippets-search.html',
+      controllerAs: 'snippetsSearch',
       controller: function ($scope, $reactive) {
         $reactive(this).attach($scope);
 
         this.newSnippet = {};
+          this.sort = {
+                displayTitles: 1
+                };
 
         this.helpers({
           snippets: () => {
-            return Snippets.find({});
+            return Snippets.find({}, { sort : this.getReactively('sort') });
           }
         });
           
@@ -26,8 +29,6 @@ angular.module('forgottenMore').directive('snippetsList', function () {
 
         this.addSnippet = () => {
             this.newSnippet.owner = Meteor.user()._id;
-            this.newSnippet.ownerEmail = Meteor.user().emails;
-            
           Snippets.insert(this.newSnippet);
           this.newSnippet = {};
         };
@@ -38,5 +39,3 @@ angular.module('forgottenMore').directive('snippetsList', function () {
       }
     }
   });
-
-

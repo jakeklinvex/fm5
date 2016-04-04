@@ -1,7 +1,9 @@
+Meteor.subscribe("userData");
+
 angular.module('forgottenMore').directive('answersList', function () {
     return {
       restrict: 'E',
-      templateUrl: 'client/tools/tools-list/answers-list.html',
+      templateUrl: 'client/tools/chat/answers-list.html',
       controllerAs: 'answersList',
       controller: function ($scope, $reactive) {
         $reactive(this).attach($scope);
@@ -15,6 +17,10 @@ angular.module('forgottenMore').directive('answersList', function () {
         });
 
         this.addAnswer = () => {
+           this.newAnswer.owner = Meteor.user()._id;
+            /*this.newAnswer.ownerEmail = Meteor.user().emails;*/
+            this.newAnswer.ownerName = Meteor.user().profile;
+            
           Answers.insert(this.newAnswer);
           this.newAnswer = {};
         };
@@ -25,3 +31,4 @@ angular.module('forgottenMore').directive('answersList', function () {
       }
     }
   });
+

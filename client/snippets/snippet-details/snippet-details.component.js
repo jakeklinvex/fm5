@@ -16,21 +16,16 @@ angular.module('forgottenMore').directive('snippetDetails', function () {
           Snippets.update({_id: $stateParams.snippetId}, {
             $set: {
             
-                displayTitle: this.snippet.displayTitle,
+                displayTitles: this.snippet.displayTitles,
                 authors: this.snippet.authors,
                 churches: this.snippet.churches,
                 denominations: this.snippet.denominations,
                 cities: this.snippet.cities,
                 types: this.snippet.types,
-                date: this.snippet.date,
+                datePublished: this.snippet.datePublished,
                 text: this.snippet.text,
                 persons: this.snippet.persons,
                 topics: this.snippet.topics,
-                Sub1: this.snippet.Sub1,
-                Sub2: this.snippet.Sub2,
-                Sub3: this.snippet.Sub3,
-                Sub4: this.snippet.Sub4,
-                Sub5: this.snippet.Sub5,
                 headings: this.snippet.headings,
                 ref: this.snippet.ref,
                 bible: this.snippet.bible

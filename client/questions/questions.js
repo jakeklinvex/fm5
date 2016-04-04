@@ -1,8 +1,8 @@
-angular.module('forgottenMore').directive('toolsList', function () {
+angular.module('forgottenMore').directive('questions', function () {
     return {
       restrict: 'E',
-      templateUrl: 'client/tools/tools-list/tools-list.html',
-      controllerAs: 'toolsList',
+      templateUrl: 'client/questions/questions.html',
+      controllerAs: 'questions',
       controller: function ($scope, $reactive) {
         $reactive(this).attach($scope);
 
@@ -13,6 +13,16 @@ angular.module('forgottenMore').directive('toolsList', function () {
             return Snippets.find({});
           }
         });
+          
+           /* $scope.snippetsList.newSnippet.bibles = [{book:'', beginning: {chapter: '', verse: ''}, ending:{chapter: '', verse: ''}}];
+          
+            $scope.removeFrom = function(array, index) {
+            array.splice(index, 1);
+            };
+  
+            $scope.addTo = function(array, template) {
+            array.push(template);
+            }; */
 
         this.addSnippet = () => {
             this.newSnippet.owner = Meteor.user()._id;
@@ -26,3 +36,4 @@ angular.module('forgottenMore').directive('toolsList', function () {
       }
     }
   });
+

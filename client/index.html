@@ -1,5 +1,5 @@
 <head>
-    
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
     <link rel="stylesheet" type="text/css" href="client/stylesheets/style.css">
   <base href="/">
 </head>
@@ -8,17 +8,35 @@
     
  
 <div ng-app="forgottenMore" ng-strict-di="">
-  <!--<h4 class="inline float-right">
-    <a href="/snippets">  |  Add Content</a>
-  </h4>
-    
-    <h4 class="inline float-right">
-    <a href="/tools">Home</a>
-  </h4> -->
+ 
     
  
-  <div ui-view=""></div>
-</div>
- 
+ <div id="test" ui-view="container"></div>
+    
+    
+    
+    
+    
+  
+ <footer class="navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="col-xs-9">
+    <ul class="left">
+        <li><a ui-sref="questions.content">Questions</a></li>
+        <li><a ui-sref="tools2.content">Tools</a></li>
+        <li><a ui-sref="snippets2.content">Snippets</a></li>
+        <li><a ui-sref="user.userDetails">Profile</a></li>
+        
+    </ul> 
+     </div>
+      <div class="col-xs-3">
+          <login-buttons class="right"></login-buttons>
+      </div>
+     
+  </div>
+</footer>
+    
+    
 </body>
+
 

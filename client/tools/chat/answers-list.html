@@ -1,0 +1,42 @@
+<main>
+<div id="chat-column">
+
+    
+<select>
+    <option class="option" value="option-1">What is the meaning of Life?</option>
+    <option value="option-2">Why is Jesus stern at times but gentle at other times?</option>    
+    
+</select>
+        
+    
+<textarea class="chatInput" ng-model="answersList.newAnswer.text"></textarea>
+            <button class= "chatButton" ng-click="answersList.addAnswer()">Add Content!</button>
+<br>
+
+            <ul class = "chat-spacing">
+                <li  ng-repeat="answer in answersList.answers | filter:query">
+                   <!-- <p > {{answer.ownerEmail[0].address}} </p> -->
+                   
+                    <div id="chat-expert">
+                    <ul>
+                        <li><a> {{answer.ownerName.fullName}}</a></li>
+                        <li><a style="font-size:80%">{{answer.ownerName.church}} </a></li>
+                    </ul>
+                    <div id="chat-cred" >
+                    <ul>
+                        <li><a>{{answer.ownerName.title}} </a></li>
+                        <li><a>{{answer.ownerName.denomination}} </a></li>
+                        <li><a>{{answer.ownerName.city}} </a></li>
+                    </ul>
+                    </div>
+                    </div>
+                    
+                    <div id="chat-text" > {{answer.text}} </div>
+                    
+                    
+                    <!--<button ng-click="answersList.removeAnswer(answer)">Delete</button> -->
+                </li>
+            </ul> 
+    
+    </div>
+    </main>
