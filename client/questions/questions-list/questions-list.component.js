@@ -17,6 +17,8 @@ angular.module('forgottenMore').directive('questionsList', function () {
         this.addQuestion = () => {
             this.newQuestion.owner = Meteor.user()._id;
             this.newQuestion.ownerName = Meteor.user().profile;
+            this.newQuestion.types = "question";
+            this.newQuestion.date = new Date();
           Questions.insert(this.newQuestion);
           this.newQuestion = {};
         };

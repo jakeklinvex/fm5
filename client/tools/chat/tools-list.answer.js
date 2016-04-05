@@ -20,6 +20,7 @@ angular.module('forgottenMore').directive('answersList', function () {
            this.newAnswer.owner = Meteor.user()._id;
             /*this.newAnswer.ownerEmail = Meteor.user().emails;*/
             this.newAnswer.ownerName = Meteor.user().profile;
+            this.newAnswer.date = new Date();
             
           Answers.insert(this.newAnswer);
           this.newAnswer = {};
