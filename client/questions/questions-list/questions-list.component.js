@@ -6,22 +6,23 @@ angular.module('forgottenMore').directive('questionsList', function () {
       controller: function ($scope, $reactive) {
         $reactive(this).attach($scope);
 
-        this.newSnippet = {};
+        this.newQuestion = {};
 
         this.helpers({
-          snippets: () => {
-            return Snippets.find({});
+          answers: () => {
+            return Questions.find({});
           }
         });
 
-        this.addSnippet = () => {
-            this.newSnippet.owner = Meteor.user()._id;
-          Snippets.insert(this.newSnippet);
-          this.newSnippet = {};
+        this.addQuestion = () => {
+            this.newQuestion.owner = Meteor.user()._id;
+            this.newQuestion.ownerName = Meteor.user().profile;
+          Questions.insert(this.newQuestion);
+          this.newQuestion = {};
         };
 
-        this.removeSnippet = (snippet) => {
-          Snippets.remove({_id: snippet._id});
+        this.removeQuestion = (answer) => {
+          Questions.remove({_id: answer._id});
         }
       }
     }

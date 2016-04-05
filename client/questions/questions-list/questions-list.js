@@ -11,7 +11,7 @@ function initSearch2(opts) {
   var widgets = [
     instantsearch.widgets.searchBox({
       container: '#search-input',
-      placeholder: 'Search Questions',
+      placeholder: 'Search or Ask Questions',
 
     }),
 

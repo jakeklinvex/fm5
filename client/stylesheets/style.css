@@ -1018,6 +1018,40 @@ textarea {
     border-color: #F15722;
 }
 
+.searchInput {
+    display: inline-block;
+    width: 100%;
+    height: 10vh;
+    font-size: 4vh;
+  font-weight: 100;
+  margin-left: 0;
+    margin-bottom: 2%;
+    
+  padding: 0;
+  border: none;
+  border-bottom: 5px solid #F4F4F4;
+    border-left: 0px solid #F4F4F4;
+}
+
+.searchInput:hover {
+    transition: border-color .3s ease-in;
+  outline: 0;
+}
+
+.searchInput:hover {
+    border-color: #FFB59A;
+}
+
+.searchInput:focus {
+    transition: border-color .3s ease-in;
+  outline: 0;
+}
+
+.searchInput:focus {
+    border-color: #F15722;
+}
+
+
 .chatButton {
     border: none;
     background-color: white;
@@ -1045,6 +1079,33 @@ textarea {
     border-color: #F4F4F4;
     color: white;
     background-color: orangered;
+    outline-color: transparent;
+  outline-style: none;
+}
+
+.searchButton {
+    border: none;
+    height: 10vh;
+    background-color: white;
+    font-size: 4vh;
+    color: lightgray;
+    border-left: 5px solid;
+    border-right: 5px solid;
+    border-bottom: 5px solid;
+    border-color: #f4f4f4;
+}
+
+.searchButton:hover {
+    transition: border-color .3s ease-in;
+    transition: color .3s ease-in;
+    transition: background-color .3s ease-in;
+  outline: 0;
+}
+
+.searchButton:hover {
+    border-color: #F15722;
+    color: #F15722;
+    background-color: white;
     outline-color: transparent;
   outline-style: none;
 }
@@ -1091,12 +1152,22 @@ textarea {
     overflow: scroll;
 }
 
+.col-xs-2 {
+    padding: 0;
+    margin:0;
+}
+
 .col-xs-3 {
     padding: 0;
     margin:0;
 }
 
 .col-xs-6 {
+    padding: 0;
+    margin:0;
+}
+
+.col-xs-10 {
     padding: 0;
     margin:0;
 }
