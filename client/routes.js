@@ -55,6 +55,29 @@ angular.module('forgottenMore').config(function ($urlRouterProvider, $stateProvi
             
             }
         })
+        
+        .state('tools2.toolDetails', {
+            url: '/tools/:toolID',
+            views: {
+                "search":{
+                template: '<tool-details></tool-details>'
+                },
+                
+                "chat":{
+                template: '<answers-list></answers-list>'
+                },
+            },
+            resolve: {
+                currentUser: ($q) => {
+                    if (Meteor.userId() == null) {
+                         return $q.reject('AUTH_REQUIRED');
+                    }
+                    else {
+                        return $q.resolve();
+                        }
+                    }
+                }
+        })
     
     
     // ********* USER PROFILE VIEW ***************

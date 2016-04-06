@@ -16,7 +16,7 @@
             <div class="col-xs-12">
                 <div class="col-xs-12">
                     <div class="col-xs-10">
-                    <input id="search-input" class="searchInput" type="text" ng-model="questionsList.newQuestion.text"/>
+                    <input id="search-input" class="searchInput" type="text" ng-model="questionsList.newQuestion.questionText"/>
                     </div>
                     <div class="col-xs-2">
                      <button class="searchButton" ng-click="questionsList.addQuestion()">Ask</button>
@@ -49,15 +49,18 @@
       </div> -->
       <div class="hit-content">
           
-           <div class="col-xs-4">
+           <div class="col-xs-3">
               <p class="hit-author">{{authors}}</p>
               <p class="hit-church">{{{churches}}}</p>
               <p class="hit-church">{{{cities}}}</p>
+               <p class="lgDisplay">{{{lgDisplay}}}</p>
+               <!--<button ng-click="upVote(ques)">-->
           </div>
           
-          <div class="col-xs-8">
+          <div class="col-xs-9">
 
               <h2 class="hit-name">{{displayTitles}}</h2>
+              <h2 class="hit-name">{{questionText}}</h2>
           <p class="hit-sub-title">{{#OrderTitle}}
                ...{{h}}
               {{/OrderTitle}}

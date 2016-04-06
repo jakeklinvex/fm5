@@ -33,9 +33,9 @@ function initSearch(opts) {
       indices: [{
         name: opts.indexName, label: 'Most relevant'
       }, {
-        name: opts.indexName + '_price_asc', label: 'Lowest price'
+        name: opts.Newest, label: 'Newest'
       }, {
-        name: opts.indexName + '_price_desc', label: 'Highest price'
+        name: opts.indexName + 'Oldest', label: 'Oldest'
       }]
     }),
     instantsearch.widgets.pagination({

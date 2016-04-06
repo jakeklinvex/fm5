@@ -24,5 +24,6 @@ angular.module('forgottenMore').directive('toolsList', function () {
           Snippets.remove({_id: snippet._id});
         }
       }
-    }
-  });
+    }    }
+
+  );

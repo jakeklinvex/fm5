@@ -48,11 +48,12 @@
 html { 
 height:100vh;
     position:relative;
+    overflow:scroll;
 }
 
 body{
     height:100vh;
-    overflow: scroll;
+    overflow:hidden;
 }
 
 #cloud-container{
@@ -1318,9 +1319,30 @@ content: none;
     padding: 0;
 }
 
+.lgDisplay {
+    font-size: 10vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: center;
+    color: #FFB59A;
+    background-color: #f4f4f4;
+    width: 50%;
+    
+}
+
 .padding2p {
     padding-left: 2%;
     padding-right: 2%;
+}
+
+#contentHold {
+    overflow-y: scroll;
+    
+}
+
+#preHold {
+     overflow-y: scroll;
+   
 }
 
 a {
