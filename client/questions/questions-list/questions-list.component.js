@@ -19,7 +19,7 @@ angular.module('forgottenMore').directive('questionsList', function () {
             this.newQuestion.ownerName = Meteor.user().profile;
             this.newQuestion.lgDisplay = "Q";
             this.newQuestion.types = "Question";
-            this.newQuestion.date = Date();
+            this.newQuestion.date = new Date();
           Questions.insert(this.newQuestion);
           this.newQuestion = {};
         };
@@ -27,6 +27,19 @@ angular.module('forgottenMore').directive('questionsList', function () {
         this.removeQuestion = (answer) => {
           Questions.remove({_id: answer._id});
         };
+          
+        var hasLiked = false;
+    this.likeClick = function () {
+        if (!hasLiked) {
+            hasLiked = true;
+            this.liked = 'Unlike';
+            this.likeCount += 1;
+        } else {
+            hasLiked = false;
+            this.liked = 'Like';
+            this.likeCount -= 1;
+        }
+    };
           
         /*this.upVote = function(ques) {
 

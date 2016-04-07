@@ -429,6 +429,14 @@ header img {
 
 }
 
+.hit-sub-title-center {
+  font-style: normal;
+    color: gray;
+    text-align: center;
+   
+
+}
+
 .hit-content .hit-description {
   color: #999;
 }
@@ -1320,13 +1328,13 @@ content: none;
 }
 
 .lgDisplay {
-    font-size: 10vh;
-    padding-left: 10%;
-    padding-right: 10%;
+    font-size: 7vw;
+    padding-left: 0;
+    padding-right: 0;
     text-align: center;
     color: #FFB59A;
-    background-color: #f4f4f4;
-    width: 50%;
+    background-color: none;
+    
     
 }
 
